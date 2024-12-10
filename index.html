@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rkiyasuのポートフォリオ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        .lobster-regular {
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #myself {
+            width: 100vw;
+            height: 90vh;
+            background: url(main.png) no-repeat;
+            background-size: cover;
+        }
+        #myself {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #myself h1{
+            font-size: 4.5rem;
+        }
+        #works img{
+            width: 25vw;
+            height: 25vw;
+            object-fit: cover;
+        }
+        #works p{
+            text-align: center;
+        }
+        #works{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items:baseline;
+        }
+        #works div {
+            margin:30px;
+        }
+        #contact {
+            width: 100vw;
+            height: 20vh;
+            background-color: #4f4f4f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="myself">
+        <h1 class="lobster-regular">Rkiyasu's Portfolio</h1>
+    </section>
+    <section id="works">
+    </section>
+    <section id="contact">
+        <p>copyright &copy; rkiyasu</p>
+    </section>
+    <script>
+        let data = [{
+            img: 'aaa.jpg',
+            des: 'aaa説明文'
+        },
+        {
+            img: 'bbb.png',
+            des: 'bbb説明文'
+        },
+        {
+            img: 'ccc.jpg',
+            des: 'ccc説明文'
+        },
+        {
+            img: 'ddd.jpg',
+            des: 'ddd説明文'
+        },
+        {
+            img: 'eee.jpg',
+            des: 'eee説明文'
+        }
+        ]
+        
+        const works = document.getElementById('works');
+
+        data.forEach(el=>{
+            let img = document.createElement('img');
+            img.src = el.img;
+            //console.log(img)
+            let p = document.createElement('p');
+            p.textContent = el.des;
+            //console.log(p)
+            let div = document.createElement('div');
+            div.append(img,p);
+            works.append(div);
+        });
+
+        //document.body.append(img,p);
+    </script>
+</body>
+</html>
